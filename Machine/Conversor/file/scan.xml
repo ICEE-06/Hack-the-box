@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scan>
+    <host>
+        <ip>192.168.1.10</ip>
+        <status>up</status>
+        <ports>
+            <port>
+                <number>22</number>
+                <protocol>tcp</protocol>
+                <state>open</state>
+                <service>ssh</service>
+            </port>
+            <port>
+                <number>80</number>
+                <protocol>tcp</protocol>
+                <state>open</state>
+                <service>http</service>
+            </port>
+        </ports>
+    </host>
+</scan>

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machine/Planning/wlakthrough.md",
+                "file": "Machine/Expressway/Writeup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "wlakthrough"
+              "title": "Writeup"
             }
           }
         ]
@@ -160,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -170,31 +171,33 @@
   },
   "active": "458ace71513e4864",
   "lastOpenFiles": [
+    "Machine/Expressway/file/ike_scan.png",
+    "Machine/Expressway/Writeup.md",
+    "Machine/Expressway/file/nmap_ike.png",
+    "Machine/Expressway/file/ssh_ike.png",
+    "Machine/HackNet/Walkthroughs.md",
+    "Machine/HackNet/files/gobuster.png",
+    "Machine/HackNet/files/hacknet.htb.png",
+    "Machine/HackNet/files/nmap.png",
+    "Machine/HackNet/files",
+    "Machine/Planning/wlakthrough.md",
+    "Machine/HackNet",
     "Machine/Planning/file/bash.png",
     "Machine/Planning/file/Non confirmé 283340.crdownload",
     "Machine/Planning/file/crontWeb.png",
     "Machine/Planning/file/activePort.png",
     "Machine/Planning/file/catCrontab.png",
     "Machine/Planning/file/crontab.png",
-    "Machine/Planning/file/linpeas.png",
-    "Machine/Planning/file/env.png",
     "Machine/Planning/file/linpeas.sh",
-    "Machine/Planning/file/connexio.png",
     "Machine/Planning/file/poc.py",
-    "Machine/Planning/file/CVE_grafana.png",
-    "Machine/Planning/file/grafana.png",
-    "Machine/Planning/wlakthrough.md",
-    "Machine/Planning/file/sousDomaines.png",
     "Machine/Planning/file/Non confirmé 115082.crdownload",
     "Machine/Voleur/Walkthrough.md",
     "Machine/Planning/file",
     "Machine/Planning",
     "Machine/Voleur/file/getUserSpns.py",
     "Machine/Voleur/file",
-    "Machine/Voleur",
     "Machine/cat/write up/Cat.md",
     "Machine/CAP/write up/CAP.md",
-    "Machine/Cypher/file/custom-apoc-extension-1.0-SNAPSHOT.jar",
     "Machine/Code/Walkthrougs.md",
     "Machine/Cypher/walkthrough.md",
     "starting point/appointement/about/Appointment.md",
